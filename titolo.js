@@ -3,6 +3,8 @@ var titolo;
 var musica;
 var moneta = [];
 var monetap;
+var pulsante;
+
 
 function startGame() {
     myGamePiece = new component(0,0, "img/m1.png", 64, 129,"image");

@@ -3,6 +3,11 @@ var imagine1;
 var imagine2;
 var imagine3;
 var imagine4;
+var imagine5;
+var imagine6;
+var imagine7;
+var imagine8;
+var imagine9;
 //fuoco
 var fuoco;
 var fuoco2;
@@ -33,11 +38,30 @@ var nemici4 = [];
 var nemici5 = [];
 var nemici6 = [];
 var nemici7 = [];
+var nemici8 = [];
+var nemici9 = [];
+var nemici10 = [];
+var nemici11 = [];
+var nemici12 = [];
+//piante
+var nemici13 = [];
+var nemici14 = [];
+//tartarughe rosse
+var nemici15 = [];
+var nemici16 = [];
+//spiny
+var nemici17 = [];
+
+
 var moneta = [];
+var moneta2 = [];
+var moneta3 = [];
+var tubo = [];
+var tubo2 = [];
 var monetap;
 var t;
 function startGame() {
-    myGamePiece = new component(100, 200, "img/m1.png", 64, 129,"image");
+    myGamePiece = new component(100, 200, "img/m1.png", 34, 529,"image");
     fuoco = new component(50, 50, "img/fu1.png", 99999, 99,"image");
     fuoco2 = new component(50, 50, "img/fu1.png", 99999, 99,"image");
     fuoco3 = new component(50, 50, "img/fu1.png", 99999, 99,"image");
@@ -45,13 +69,18 @@ function startGame() {
     fuoco5 = new component(50, 50, "img/fu1.png", 99999, 99,"image");
     fuoco6 = new component(50, 50, "img/fu1.png", 99999, 99,"image");
     monetap= new component(70, 70, "img/c1.png", 524, 1,"image");
-    imagine1 = new component(170, 80, "img/gb2.png", 64, 129,"image");
+    imagine1 = new component(170, 80, "img/g3.png", 64, 129,"image");
     imagine2 = new component(100, 80, "img/k2.png", 64, 129,"image");
     imagine3 = new component(100, 80, "img/g4.png", 64, 129,"image");
     imagine4 = new component(100, 80, "img/c1.png", 64, 129,"image");
+    imagine5 = new component(100, 80, "img/p2.png", 64, 129,"image");
+    imagine6 = new component(100, 80, "img/c3.png", 64, 129,"image");
+    imagine7 = new component(100, 80, "img/krf4.png", 64, 129,"image");
+    imagine8 = new component(100, 80, "img/krf3.png", 64, 129,"image");
+    imagine9 = new component(100, 80, "img/sp4.png", 64, 129,"image");
     myGamePiece.gravity = 2;
-    t = new component(2000, 200, "img/tt.png", 0, 770,"image");
-    musica = new sound('musica/cave.mp3');
+    t = new component(2000, 200, "img/ttt.png", 0, 770,"image");
+    musica = new sound('musica/castel.mp3');
     suono = new sound('musica/s1.wav');
     suono2 = new sound('musica/s2.wav');
     suono3 = new sound('musica/s3.wav');
@@ -194,38 +223,11 @@ function component(width, height, color, x, y, type) {
     }
 }
 let velocita=0;
-function s1(){
-    if(myGameArea.monetar>10){
-        suono4.play();
-        velocita=20;
-        myGameArea.monetar-=10;
-    }
-}
 
-function s2(){
-    if(myGameArea.monetar>20){
-        suono4.play();
-        myGameArea.vitaMario+=10;
-        myGameArea.monetar-=20;
-    }
-}
-
-function s3(){
-    if(myGameArea.monetar>90){
-        suono5.play();
-        myGameArea.vitaMario+=100;
-        myGameArea.monetar-=90;
-    }
-}
-
-function s4(){
-    if(myGameArea.monetar>500){
-        suono5.play();
-        myGameArea.vitaMario+=500;
-        myGameArea.monetar-=500;
-    }
-}
-
+function s1(){if(myGameArea.monetar>10){suono4.play();velocita=20;myGameArea.monetar-=10;}}
+function s2(){if(myGameArea.monetar>20){suono4.play();myGameArea.vitaMario+=10;myGameArea.monetar-=20;}}
+function s3(){if(myGameArea.monetar>90){suono5.play();myGameArea.vitaMario+=100;myGameArea.monetar-=90;}}
+function s4(){if(myGameArea.monetar>500){suono5.play();myGameArea.vitaMario+=500;myGameArea.monetar-=500; }}
 function s5(){
     if(myGameArea.monetar>90){
         suono4.play();
@@ -505,72 +507,98 @@ function updateGameArea() {
     if(myGamePiece.x>1980){
         myGamePiece.speedX = -22+velocita; 
     }
+
     if(myGamePiece.x<10){
         myGamePiece.speedX = 22+velocita; 
     }
 
     //zona clonazione
-    if (myGameArea.frameNo == 1 || everyinterval(300)) {
+    if (myGameArea.frameNo == 1 || everyinterval(100)) {
         x = myGameArea.canvas.width;
         y = myGameArea.canvas.height - 290;
-        nemici1.push(new component(100, 100, "img/gb1.png", x, y, "image"));
+        nemici1.push(new component(100, 100, "img/g3.png", x, y, "image"));
     }
 
-    if (myGameArea.frameNo == 1 || everyinterval(300)) {
+    if (myGameArea.frameNo == 1 || everyinterval(100)) {
         x = myGameArea.canvas.width - 2300;
         y = myGameArea.canvas.height - 290;
-        nemici2.push(new component(100, 100, "img/gb1.png", x, y, "image"));
+        nemici2.push(new component(100, 100, "img/g4.png", x, y, "image"));
     }
 
-
-    if(myGameArea.frameNo>900){
-
-        if (myGameArea.frameNo == 1 || everyinterval(140)) {
+    if(myGameArea.frameNo>300){
+        if (myGameArea.frameNo == 1 || everyinterval(100)) {
             x = myGameArea.canvas.width ;
             y = myGameArea.canvas.height - 340;
             nemici3.push(new component(100, 150, "img/k1.png", x, y, "image"));
         }
-        if (myGameArea.frameNo == 1 || everyinterval(150)) {
+        if (myGameArea.frameNo == 1 || everyinterval(100)) {
             x = myGameArea.canvas.width -2000 ;
             y = myGameArea.canvas.height - 340;
             nemici4.push(new component(100, 150, "img/k3.png", x, y, "image"));
         }
-    
+  
     }
 
     if(myGameArea.frameNo>1300){
-        if (myGameArea.frameNo == 1 || everyinterval(140)) {
+        if (myGameArea.frameNo == 1 || everyinterval(90)) {
+            num=Math.floor(Math.random()*700)+100;
             x = myGameArea.canvas.width ;
-            y = myGameArea.canvas.height - 340;
-            nemici5.push(new component(100, 150, "img/kb1.png", x, y, "image"));
+            y = myGameArea.canvas.height - num;
+            nemici8.push(new component(100, 150, "img/kf.png", x, y, "image"));
+        }
+        if (myGameArea.frameNo == 1 || everyinterval(90)) {
+            num=Math.floor(Math.random()*700)+100;
+            x = myGameArea.canvas.width -2000;
+            y = myGameArea.canvas.height - num;
+            nemici12.push(new component(100, 150, "img/kf2.png", x, y, "image"));
         }
 
+        if (myGameArea.frameNo == 1 || everyinterval(90)) {
+            num=Math.floor(Math.random()*700)+100;
+            x = myGameArea.canvas.width -2000;
+            y = myGameArea.canvas.height - num;
+            nemici12.push(new component(100, 150, "img/kf2.png", x, y, "image"));
+        }
+
+        if (myGameArea.frameNo == 1 || everyinterval(90)) {
+            num=Math.floor(Math.random()*800)+50;
+            x = myGameArea.canvas.width ;
+            y = myGameArea.canvas.height - num;
+            nemici15.push(new component(100, 150, "img/kf2.png", x, y, "image"));
+        }
+    
+        if (myGameArea.frameNo == 1 || everyinterval(90)) {
+            num=Math.floor(Math.random()*800)+50;
+            x = myGameArea.canvas.width -2000;
+            y = myGameArea.canvas.height - num;
+            nemici16.push(new component(100, 150, "img/kf2.png", x, y, "image"));
+        }
     }
 
-
-    
-    if(myGameArea.frameNo>1500){
-
-        if (myGameArea.frameNo == 1 || everyinterval(200)) {
+    if(myGameArea.frameNo>500){
+        if (myGameArea.frameNo == 1 || everyinterval(100)) {
             x = myGameArea.canvas.width ;
             y = myGameArea.canvas.height - 340;
             nemici6.push(new component(100, 150, "img/kr.png", x, y, "image"));
         }
 
-    }
-
-    if(myGameArea.frameNo>10){
-        if (myGameArea.frameNo == 1 || everyinterval(140)) {
-            x = myGameArea.canvas.width ;
+        if (myGameArea.frameNo == 1 || everyinterval(100)) {
+            x = myGameArea.canvas.width -2000;
             y = myGameArea.canvas.height - 340;
-            nemici5.push(new component(100, 150, "img/kb1.png", x, y, "image"));
+            nemici7.push(new component(100, 150, "img/kr.png", x, y, "image"));
         }
 
+        
+        if (myGameArea.frameNo == 1 || everyinterval(100)) {
+            x = myGameArea.canvas.width;
+            y = myGameArea.canvas.height - 290;
+            nemici17.push(new component(100, 100, "img/sp3.png", x, y, "image"));
+        }
     }
 
-    if (myGameArea.frameNo == 1 || everyinterval(80)) {
+    if (myGameArea.frameNo == 1 || everyinterval(60)) {
         num=Math.floor(Math.random()*500)+300;
-        num2=Math.floor(Math.random()*60)+10;
+        num2=Math.floor(Math.random()*100)+10;
         x = myGameArea.canvas.width;
         x2 = myGameArea.canvas.width -70;
         x3 = myGameArea.canvas.width -140;
@@ -578,22 +606,71 @@ function updateGameArea() {
         x5 = myGameArea.canvas.width -280;
         y = myGameArea.canvas.height - num;
   
-        if(num2>50){
-            moneta.push(new component(70, 70, "img/c3.png", x, y, "image"));
+        if(num2>90){
+            moneta.push(new component(70, 70, "img/c1.png", x, y, "image"));
         }
-        else if(num2>30){
-            moneta.push(new component(70, 70, "img/c3.png", x, y, "image"));
-            moneta.push(new component(70, 70, "img/c3.png", x2, y, "image"));
-            moneta.push(new component(70, 70, "img/c3.png", x3, y, "image"));
-        }else if(num2>10){
-            moneta.push(new component(70, 70, "img/c3.png", x, y, "image"));
-            moneta.push(new component(70, 70, "img/c3.png", x2, y, "image"));
-            moneta.push(new component(70, 70, "img/c3.png", x3, y, "image"));
-            moneta.push(new component(70, 70, "img/c3.png", x4, y, "image"));
-            moneta.push(new component(70, 70, "img/c3.png", x5, y, "image"));
+        else if(num2>85){
+            moneta.push(new component(70, 70, "img/c1.png", x, y, "image"));
+            moneta.push(new component(70, 70, "img/c1.png", x2, y, "image"));
+            moneta.push(new component(70, 70, "img/c1.png", x3, y, "image"));
+        }else if(num2>80){
+            moneta.push(new component(70, 70, "img/c1.png", x, y, "image"));
+            moneta.push(new component(70, 70, "img/c1.png", x2, y, "image"));
+            moneta.push(new component(70, 70, "img/c1.png", x3, y, "image"));
+            moneta.push(new component(70, 70, "img/c1.png", x4, y, "image"));
+            moneta.push(new component(70, 70, "img/c1.png", x5, y, "image"));
+        }
+        else if(num2>75){
+            moneta2.push(new component(70, 70, "img/c2.png", x, y, "image"));
+        }
+        else if(num2>70){
+            moneta2.push(new component(70, 70, "img/c2.png", x, y, "image"));
+            moneta2.push(new component(70, 70, "img/c2.png", x2, y, "image"));
+            moneta2.push(new component(70, 70, "img/c2.png", x3, y, "image"));
+        }
+        else if(num2>65){
+            moneta2.push(new component(70, 70, "img/c2.png", x, y, "image"));
+            moneta2.push(new component(70, 70, "img/c2.png", x2, y, "image"));
+            moneta2.push(new component(70, 70, "img/c2.png", x3, y, "image"));
+            moneta2.push(new component(70, 70, "img/c2.png", x4, y, "image"));
+            moneta2.push(new component(70, 70, "img/c2.png", x5, y, "image"));
+        }
+        else if(num2>60){
+            moneta3.push(new component(70, 70, "img/c3.png", x, y, "image"));
+        }
+        else if(num2>59){
+            moneta3.push(new component(70, 70, "img/c3.png", x, y, "image"));
+            moneta3.push(new component(70, 70, "img/c3.png", x2, y, "image"));
+            moneta3.push(new component(70, 70, "img/c3.png", x3, y, "image"));
+        }
+        else if(num2>50){
+            moneta3.push(new component(70, 70, "img/c3.png", x, y, "image"));
+            moneta3.push(new component(70, 70, "img/c3.png", x2, y, "image"));
+            moneta3.push(new component(70, 70, "img/c3.png", x3, y, "image"));
+            moneta3.push(new component(70, 70, "img/c3.png", x4, y, "image"));
+            moneta3.push(new component(70, 70, "img/c3.png", x5, y, "image"));
         }
     }
 
+
+    if (myGameArea.frameNo == 1 || everyinterval(810)) {
+        x = myGameArea.canvas.width -620;
+        xp = myGameArea.canvas.width -580;
+        y = myGameArea.canvas.height  ;
+        yp = myGameArea.canvas.height -170 ;
+        nemici13.push(new component(120, 170, "img/p1.png", xp, yp, "image"));
+        tubo.push(new component(200, 800, "img/tubo.png", x, y, "image"));
+    }
+
+    if (myGameArea.frameNo == 1 || everyinterval(810)) {
+        x = myGameArea.canvas.width -1520;
+        xp = myGameArea.canvas.width -1480;
+        y = myGameArea.canvas.height  ;
+        yp = myGameArea.canvas.height -170 ;
+        nemici14.push(new component(120, 170, "img/p1.png", xp, yp, "image"));
+        tubo2.push(new component(200, 800, "img/tubo.png", x, y, "image"));
+    }
+    
     if(myGameArea.vitaMariof>0){
         testovita2.text="MARIO fuoco:"+myGameArea.vitaMariof;
         testovita2.update();
@@ -764,10 +841,10 @@ function updateGameArea() {
     for (i = 0; i < nemici1.length; i += 1) {
         let n = Math.floor(Math.random() * 2) + 1;
         if (n == 1) {
-            nemici1[i].image.src = "img/gb1.png";
+            nemici1[i].image.src = "img/g3.png";
         } 
         if (n == 2) {
-            nemici1[i].image.src = "img/gb2.png";
+            nemici1[i].image.src = "img/g4.png";
         } 
         if (myGamePiece.crashWith(nemici1[i])) {
             if(myGameArea.keys && myGameArea.keys[38] || myGameArea.keys && myGameArea.keys[40]){
@@ -780,35 +857,13 @@ function updateGameArea() {
             }
         }
 
-        nemici1[i].x += -5;
+        nemici1[i].x += -9;
         nemici1[i].update();
 
-      if (fuoco.crashWith(nemici1[i])) {
-            nemici1[i].x=-10000;
-            myGameArea.punti+=100;
-            suono3.play();
-            fuoco.x=myGamePiece.x;
-            fuoco.y=myGamePiece.y+70;
-      }
-      if (fuoco2.crashWith(nemici1[i])) {
-        nemici1[i].x=-10000;
-        myGameArea.punti+=100;
-        suono3.play();
-        fuoco2.x=myGamePiece.x;
-        fuoco2.y=myGamePiece.y+70;
-      }
-
-      if (fuoco3.crashWith(nemici1[i]) || fuoco4.crashWith(nemici1[i])) {
-        nemici1[i].x=-10000;
-        myGameArea.punti+=100;
-        suono3.play();
-      }
-
-      if (fuoco5.crashWith(nemici1[i]) || fuoco6.crashWith(nemici1[i])) {
-        nemici1[i].x=-10000;
-        myGameArea.punti+=100;
-        suono3.play();
-      }
+      if (fuoco.crashWith(nemici1[i])) {nemici1[i].x=-10000;myGameArea.punti+=100;suono3.play();fuoco.x=myGamePiece.x;fuoco.y=myGamePiece.y+70;}
+      if (fuoco2.crashWith(nemici1[i])) { nemici1[i].x=-10000; myGameArea.punti+=100;suono3.play();fuoco2.x=myGamePiece.x;fuoco2.y=myGamePiece.y+70;}
+      if (fuoco3.crashWith(nemici1[i]) || fuoco4.crashWith(nemici1[i])) {nemici1[i].x=-10000; myGameArea.punti+=100;suono3.play();}
+      if (fuoco5.crashWith(nemici1[i]) || fuoco6.crashWith(nemici1[i])) {nemici1[i].x=-10000;myGameArea.punti+=100;suono3.play();}
 
         if(nemici1[i].x<1){
             nemici1.splice(i, 1);
@@ -819,10 +874,10 @@ function updateGameArea() {
     for (i = 0; i < nemici2.length; i += 1) {
         let n = Math.floor(Math.random() * 2) + 1;
         if (n == 1) {
-            nemici2[i].image.src = "img/gb1.png";
+            nemici2[i].image.src = "img/g3.png";
         } 
         if (n == 2) {
-            nemici2[i].image.src = "img/gb2.png";
+            nemici2[i].image.src = "img/g4.png";
         } 
         if (myGamePiece.crashWith(nemici2[i])) {
             if(myGameArea.keys && myGameArea.keys[38] || myGameArea.keys && myGameArea.keys[40]){
@@ -848,7 +903,7 @@ function updateGameArea() {
             fuoco2.x=myGamePiece.x;
             fuoco2.y=myGamePiece.y+70;
       }
-        nemici2[i].x += 3;
+        nemici2[i].x += 9;
         nemici2[i].update();
 
         if (fuoco3.crashWith(nemici2[i])) {
@@ -942,6 +997,7 @@ function updateGameArea() {
             i--; 
         }
     }
+
 //koopa verde 2
     for (i = 0; i < nemici4.length; i += 1) {
         let n = Math.floor(Math.random() * 2) + 1;
@@ -1137,15 +1193,407 @@ function updateGameArea() {
             i--; 
         }
     }
+//koopa rosso 2
 
-    for (i = 0; i < moneta.length; i += 1) {
+for (i = 0; i < nemici7.length; i += 1) {
+    let n = Math.floor(Math.random() * 2) + 1;
+
+    if (myGamePiece.crashWith(nemici7[i])) {
+        if(myGameArea.keys && myGameArea.keys[38] || myGameArea.keys && myGameArea.keys[40]){
+            myGameArea.punti+=100;
+            suono3.play();    
+            nemici7[i].x = +10000;
+        }else{
+            myGameArea.vitaMario-=10;
+            suono7.play();
+        }
+    }
+
+    nemici7[i].x += 18;
+    nemici7[i].update();
+
+if(nemici7[i].x>500){
+    if (n == 1) {
+        nemici7[i].image.src = "img/kkr.png";
+    } 
+    if (n == 2) {
+        nemici7[i].image.src = "img/kkr.png";
+    } 
+    nemici7[i].x += 30;
+    nemici7[i].y = 670;
+    this.nemici7[i].height=100;
+}else{
+    if (n == 1) {
+        nemici7[i].image.src = "img/kr3.png";
+    } 
+    if (n == 2) {
+        nemici7[i].image.src = "img/kr4.png";
+    } 
+}
+
+  if (fuoco.crashWith(nemici7[i])) {
+        nemici7[i].x=+10000;
+        myGameArea.punti+=100;
+        suono3.play();
+        fuoco.x=myGamePiece.x;
+        fuoco.y=myGamePiece.y+70;
+  }
+  if (fuoco2.crashWith(nemici7[i])) {
+    nemici7[i].x=+10000;
+    myGameArea.punti+=100;
+    suono3.play();
+    fuoco2.x=myGamePiece.x;
+    fuoco2.y=myGamePiece.y+70;
+  }
+
+  if (fuoco3.crashWith(nemici7[i]) || fuoco4.crashWith(nemici7[i]) || (fuoco5.crashWith(nemici7[i]) || fuoco6.crashWith(nemici7[i]))) {
+    nemici7[i].x=+10000;
+    myGameArea.punti+=100;
+    suono3.play();
+  }
+
+    if(nemici7[i].x>2001){
+        nemici7.splice(i, 1);
+        i--; 
+    }
+}
+ //koopa verde volante
+ for (i = 0; i < nemici8.length; i += 1) {
+    let n = Math.floor(Math.random() * 2) + 1;
+    if (myGamePiece.crashWith(nemici8[i])) {
+        if(myGameArea.keys && myGameArea.keys[32] || myGameArea.keys && myGameArea.keys[40]){
+            myGameArea.punti+=100;
+            suono3.play();    
+            nemici8[i].x = -10000;
+        }else{
+            myGameArea.vitaMario-=10;
+            suono7.play();
+        }
+    }
+    nemici8[i].x += -6;
+    nemici8[i].update();
+
+if(nemici8[i].x<1400){
+    if (n == 1) {
+        nemici8[i].image.src = "img/kk.png";
+    } 
+    if (n == 2) {
+        nemici8[i].image.src = "img/kk.png";
+    } 
+    nemici8[i].x += -16;
+    this.nemici8[i].height=100;
+}else{
+    if (n == 1) {
+        nemici8[i].image.src = "img/kf3.png";
+    } 
+    if (n == 2) {
+        nemici8[i].image.src = "img/kf4.png";
+    } 
+}
+  if (fuoco.crashWith(nemici8[i])) {
+        nemici8[i].x=-10000;
+        myGameArea.punti+=100;
+        suono3.play();
+        fuoco.x=myGamePiece.x;
+        fuoco.y=myGamePiece.y+70;
+  }
+  if (fuoco2.crashWith(nemici8[i])) {
+    nemici8[i].x=-10000;
+    myGameArea.punti+=100;
+    suono3.play();
+    fuoco2.x=myGamePiece.x;
+    fuoco2.y=myGamePiece.y+70;
+  }
+  if (fuoco3.crashWith(nemici8[i]) || fuoco4.crashWith(nemici8[i])) {
+    nemici8[i].x=-10000;
+    myGameArea.punti+=100;
+    suono3.play();
+  }
+  if (fuoco5.crashWith(nemici8[i]) || fuoco6.crashWith(nemici8[i])) {
+    nemici8[i].x=-10000;
+    myGameArea.punti+=100;
+    suono3.play();
+  }
+    if(nemici8[i].x<1){
+        nemici8.splice(i, 1);
+        i--; 
+    }
+}
+
+
+for (i = 0; i < nemici11.length; i += 1) {
+    let n = Math.floor(Math.random() * 2) + 1;
+    if (n == 1) {
+        nemici11[i].image.src = "img/g3.png";
+    } 
+    if (n == 2) {
+        nemici11[i].image.src = "img/g4.png";
+    } 
+    if (myGamePiece.crashWith(nemici11[i])) {
+        if(myGameArea.keys && myGameArea.keys[38]){
+            myGameArea.punti+=100;
+            suono3.play();    
+            nemici11[i].x = -10000;
+        }else{
+            myGameArea.vitaMario-=1;
+            suono7.play();
+        }
+    }
+    nemici11[i].x += -9;
+    nemici11[i].update();
+  if (fuoco.crashWith(nemici11[i])) {nemici11[i].x=-10000;myGameArea.punti+=100; suono3.play(); fuoco.x=myGamePiece.x;  fuoco.y=myGamePiece.y+70;}
+  if (fuoco2.crashWith(nemici11[i])) { nemici11[i].x=-10000; myGameArea.punti+=100;  suono3.play();  fuoco2.x=myGamePiece.x; fuoco2.y=myGamePiece.y+70;}
+  if (fuoco3.crashWith(nemici11[i]) || fuoco4.crashWith(nemici11[i])) {nemici11[i].x=-10000; myGameArea.punti+=100;suono3.play();}
+  if (fuoco5.crashWith(nemici11[i]) || fuoco6.crashWith(nemici11[i])) { nemici11[i].x=-10000;myGameArea.punti+=100;  suono3.play();}
+    if(nemici11[i].x<1){
+        nemici11.splice(i, 1);
+        i--; 
+    }
+}
+ //koopa verde volante 2
+for (i = 0; i < nemici12.length; i += 1) {
+    let n = Math.floor(Math.random() * 2) + 1;
+    if (myGamePiece.crashWith(nemici12[i])) {
+        if(myGameArea.keys && myGameArea.keys[32] || myGameArea.keys && myGameArea.keys[40]){
+            myGameArea.punti+=100;
+            suono3.play();    
+            nemici12[i].x = +10000;
+        }else{
+            myGameArea.vitaMario-=10;
+            suono7.play();
+        }
+    }
+    nemici12[i].x += 6;
+    nemici12[i].update();
+
+if(nemici12[i].x>400){
+    if (n == 1) {
+        nemici12[i].image.src = "img/kk.png";
+    } 
+    if (n == 2) {
+        nemici12[i].image.src = "img/kk.png";
+    } 
+    nemici12[i].x += 16;
+    this.nemici12[i].height=100;
+}else{
+    if (n == 1) {
+        nemici12[i].image.src = "img/kf2.png";
+    } 
+    if (n == 2) {
+        nemici12[i].image.src = "img/kf.png";
+    } 
+}
+
+if (fuoco.crashWith(nemici12[i])) {nemici12[i].x=+10000;myGameArea.punti+=100;suono3.play();fuoco.x=myGamePiece.x;fuoco.y=myGamePiece.y+70;}
+if (fuoco2.crashWith(nemici12[i])) {nemici12[i].x=+10000;myGameArea.punti+=100;suono3.play();fuoco2.x=myGamePiece.x;fuoco2.y=myGamePiece.y+70;}
+if (fuoco3.crashWith(nemici12[i]) || fuoco4.crashWith(nemici12[i])) {nemici12[i].x=+10000;myGameArea.punti+=100;suono3.play();}
+if (fuoco5.crashWith(nemici12[i]) || fuoco6.crashWith(nemici12[i])) {nemici12[i].x=+10000;myGameArea.punti+=100;suono3.play();}}
+
+//pianta carnivola
+for (i = 0; i < nemici13.length; i += 1) {
+    let n = Math.floor(Math.random() * 2) + 1;
+    if (n == 1) {
+        nemici13[i].image.src = "img/p1.png";
+    } 
+    if (n == 2) {
+        nemici13[i].image.src = "img/p2.png";
+    } 
+    if (nemici13[i].y < 332) {
+        nemici13[i].x+=-1;
+        nemici13[i].y+=2;
+    }
+    if (nemici13[i].x < 1350) {
+          nemici13[i].y+=3;
+    }
+
+    if (myGamePiece.crashWith(nemici13[i])) {
+                myGameArea.vitaMario-=40;
+                suono7.play();
+    }
+    nemici13[i].y+=-2;
+    nemici13[i].update();
+  if (fuoco.crashWith(nemici13[i])) {nemici13[i].x=-10000;myGameArea.punti+=100; suono3.play(); fuoco.x=myGamePiece.x;  fuoco.y=myGamePiece.y+70;}
+  if (fuoco2.crashWith(nemici13[i])) { nemici13[i].x=-10000; myGameArea.punti+=100;  suono3.play();  fuoco2.x=myGamePiece.x; fuoco2.y=myGamePiece.y+70;}
+  if (fuoco3.crashWith(nemici13[i]) || fuoco4.crashWith(nemici13[i])) {nemici13[i].x=-10000; myGameArea.punti+=100;suono3.play();}
+  if (fuoco5.crashWith(nemici13[i]) || fuoco6.crashWith(nemici13[i])) { nemici13[i].x=-10000;myGameArea.punti+=100;  suono3.play();}
+  if(nemici13[i].y>800){
+    nemici13.splice(i, 1);
+    i--; 
+}
+}
+
+for (i = 0; i < nemici14.length; i += 1) {
+    let n = Math.floor(Math.random() * 2) + 1;
+    if (n == 1) {
+        nemici14[i].image.src = "img/p1.png";
+    } 
+    if (n == 2) {
+        nemici14[i].image.src = "img/p2.png";
+    } 
+    if (nemici14[i].y < 332) {
+        nemici14[i].x+=-1;
+        nemici14[i].y+=2;
+    }
+    if (nemici14[i].x < 410) {
+          nemici14[i].y+=3;
+    }
+    if (myGamePiece.crashWith(nemici14[i])) {
+                myGameArea.vitaMario-=40;
+                suono7.play();
+    }
+    nemici14[i].y+=-2;
+    nemici14[i].update();
+  if (fuoco.crashWith(nemici14[i])) {nemici14[i].x=-10000;myGameArea.punti+=100; suono3.play(); fuoco.x=myGamePiece.x;  fuoco.y=myGamePiece.y+70;}
+  if (fuoco2.crashWith(nemici14[i])) { nemici14[i].x=-10000; myGameArea.punti+=100;  suono3.play();  fuoco2.x=myGamePiece.x; fuoco2.y=myGamePiece.y+70;}
+  if (fuoco3.crashWith(nemici14[i]) || fuoco4.crashWith(nemici14[i])) {nemici14[i].x=-10000; myGameArea.punti+=100;suono3.play();}
+  if (fuoco5.crashWith(nemici14[i]) || fuoco6.crashWith(nemici14[i])) { nemici14[i].x=-10000;myGameArea.punti+=100;  suono3.play();}
+  if(nemici14[i].y>800){
+    nemici14.splice(i, 1);
+    i--; 
+}
+}
+
+//koopa rosso volante
+for (i = 0; i < nemici15.length; i += 1) {
+    var speed = 6;
+    let n = Math.floor(Math.random() * 2) + 1;
+    if (myGamePiece.crashWith(nemici15[i])) {
+        if(myGameArea.keys && myGameArea.keys[32] || myGameArea.keys && myGameArea.keys[40]){
+            myGameArea.punti+=100;
+            suono3.play();    
+            nemici15[i].x = -10000;
+        }else{
+            myGameArea.vitaMario-=20;
+            suono7.play();
+        }
+    }
+    var deltaX = myGamePiece.x - nemici15[i].x;
+    var deltaY = myGamePiece.y - nemici15[i].y;
+    var angle = Math.atan2(deltaY, deltaX);
+    nemici15[i].x += speed * Math.cos(angle);
+    nemici15[i].y += speed * Math.sin(angle);
+    nemici15[i].update();
+if(nemici15[i].x<1400){
+    if (n == 1) {
+        nemici15[i].image.src = "img/kkr.png";
+    } 
+    if (n == 2) {
+        nemici15[i].image.src = "img/kkr.png";
+    } 
+    nemici15[i].x += -41;
+    this.nemici15[i].height=100;
+}else{
+    if (n == 1) {
+        nemici15[i].image.src = "img/krf3.png";
+    } 
+    if (n == 2) {
+        nemici15[i].image.src = "img/krf4.png";
+    } 
+}
+  if (fuoco.crashWith(nemici15[i])) {nemici15[i].x=-10000;myGameArea.punti+=100;suono3.play();fuoco.x=myGamePiece.x;fuoco.y=myGamePiece.y+70;
+  }
+  if (fuoco2.crashWith(nemici15[i])) {nemici15[i].x=-10000; myGameArea.punti+=100; suono3.play(); fuoco2.x=myGamePiece.x;fuoco2.y=myGamePiece.y+70;
+  }
+  if (fuoco3.crashWith(nemici15[i]) || fuoco4.crashWith(nemici15[i])) {nemici15[i].x=-10000;myGameArea.punti+=100;suono3.play();
+  }
+  if (fuoco5.crashWith(nemici15[i]) || fuoco6.crashWith(nemici15[i])) { nemici15[i].x=-10000; myGameArea.punti+=100; suono3.play();
+  }
+if(nemici15[i].x<1){
+    nemici15.splice(i, 1);
+    i--; 
+}
+}
+
+
+//koopa rosso volante
+for (i = 0; i < nemici16.length; i += 1) {
+    var speed = 6;
+    let n = Math.floor(Math.random() * 2) + 1;
+    if (myGamePiece.crashWith(nemici16[i])) {
+        if(myGameArea.keys && myGameArea.keys[32] || myGameArea.keys && myGameArea.keys[40]){
+            myGameArea.punti+=100;
+            suono3.play();    
+            nemici16[i].x = +10000;
+        }else{
+            myGameArea.vitaMario-=20;
+            suono7.play();
+        }
+    }
+    var deltaX = myGamePiece.x - nemici16[i].x;
+    var deltaY = myGamePiece.y - nemici16[i].y;
+    var angle = Math.atan2(deltaY, deltaX);
+    nemici16[i].x += speed * Math.cos(angle);
+    nemici16[i].y += speed * Math.sin(angle);
+    nemici16[i].update();
+if(nemici16[i].x>500){
+    if (n == 1) {
+        nemici16[i].image.src = "img/kkr.png";
+    } 
+    if (n == 2) {
+        nemici16[i].image.src = "img/kkr.png";
+    } 
+    nemici16[i].x += 41;
+    this.nemici16[i].height=100;
+}else{
+    if (n == 1) {
+        nemici16[i].image.src = "img/krf.png";
+    } 
+    if (n == 2) {
+        nemici16[i].image.src = "img/krf2.png";
+    } 
+}
+  if (fuoco.crashWith(nemici16[i])) {nemici16[i].x=+10000;myGameArea.punti+=100;suono3.play();fuoco.x=myGamePiece.x;fuoco.y=myGamePiece.y+70;
+  }
+  if (fuoco2.crashWith(nemici16[i])) {nemici16[i].x=+10000; myGameArea.punti+=100; suono3.play(); fuoco2.x=myGamePiece.x;fuoco2.y=myGamePiece.y+70;
+  }
+  if (fuoco3.crashWith(nemici16[i]) || fuoco4.crashWith(nemici16[i])) {nemici16[i].x=+10000;myGameArea.punti+=100;suono3.play();
+  }
+  if (fuoco5.crashWith(nemici16[i]) || fuoco6.crashWith(nemici16[i])) { nemici16[i].x=+10000; myGameArea.punti+=100; suono3.play();
+  }
+if(nemici16[i].x>2001){
+    nemici16.splice(i, 1);
+    i--; 
+}
+}
+
+
+for (i = 0; i < nemici17.length; i += 1) {
+    let n = Math.floor(Math.random() * 2) + 1;
+    if (n == 1) {
+        nemici17[i].image.src = "img/sp3.png";
+    } 
+    if (n == 2) {
+        nemici17[i].image.src = "img/sp4.png";
+    } 
+    if (myGamePiece.crashWith(nemici17[i])) {
+        if(myGameArea.keys && myGameArea.keys[38] || myGameArea.keys && myGameArea.keys[40]){
+            myGameArea.vitaMario-=1;
+            suono7.play();
+        }
+    }
+
+    nemici17[i].x += -12;
+    nemici17[i].update();
+
+  if (fuoco.crashWith(nemici17[i])) {nemici17[i].x=-10000;myGameArea.punti+=100;suono3.play();fuoco.x=myGamePiece.x;fuoco.y=myGamePiece.y+70;}
+  if (fuoco2.crashWith(nemici17 [i])) { nemici17[i].x=-10000; myGameArea.punti+=100;suono3.play();fuoco2.x=myGamePiece.x;fuoco2.y=myGamePiece.y+70;}
+  if (fuoco3.crashWith(nemici17[i]) || fuoco4.crashWith(nemici17[i])) {nemici17[i].x=-10000; myGameArea.punti+=100;suono3.play();}
+  if (fuoco5.crashWith(nemici17[i]) || fuoco6.crashWith(nemici17[i])) {nemici17[i].x=-10000;myGameArea.punti+=100;suono3.play();}
+
+    if(nemici17[i].x<1){
+        nemici17.splice(i, 1);
+        i--; 
+    }
+}
+
+
+for (i = 0; i < moneta.length; i += 1) {
         let n = Math.floor(Math.random() * 1) + 1;
         if (n == 1) {
             moneta[i].image.src = "img/c1.png";
         } 
         moneta[i].x += -4;
         moneta[i].update();
-
         if (myGamePiece.crashWith(moneta[i])) {
          myGameArea.monetar+=1;
          suono.play();
@@ -1154,7 +1602,96 @@ function updateGameArea() {
         }
     }
 
-    if(myGameArea.frameNo>8000){
+    for (i = 0; i < moneta2.length; i += 1) {
+        let n = Math.floor(Math.random() * 1) + 1;
+        if (n == 1) {
+            moneta2[i].image.src = "img/c2.png";
+        } 
+        moneta2[i].x += -4;
+        moneta2[i].update();
+        if (myGamePiece.crashWith(moneta2[i])) {
+         myGameArea.monetar+=10;
+         suono.play();
+         moneta2.splice(i, 1);
+         i--; 
+        }
+    }
+
+    for (i = 0; i < moneta3.length; i += 1) {
+        let n = Math.floor(Math.random() * 1) + 1;
+        if (n == 1) {
+            moneta3[i].image.src = "img/c3.png";
+        } 
+        moneta3[i].x += -4;
+        moneta3[i].update();
+        if (myGamePiece.crashWith(moneta3[i])) {
+         myGameArea.monetar+=50;
+         suono.play();
+         moneta3.splice(i, 1);
+         i--; 
+        }
+    }
+
+    for (i = 0; i < tubo.length; i += 1) {
+        tubo[i].y+=-2;
+        if (tubo[i].y < 500) {
+          tubo[i].x+=-1;
+          tubo[i].y+=2;
+        }
+        if (tubo[i].x < 1310) {
+            tubo[i].y+=3;
+          }
+        if (fuoco.crashWith(tubo[i]) || fuoco2.crashWith(tubo[i]) || fuoco3.crashWith(tubo[i]) || fuoco4.crashWith(tubo[i]) || fuoco5.crashWith(tubo[i]) || fuoco5.crashWith(tubo[i])) {
+            fuoco2.x=myGamePiece.x;
+            fuoco2.y=myGamePiece.y+70;
+            fuoco.x=myGamePiece.x;
+            fuoco.y=myGamePiece.y+70;
+            fuoco3.x=myGamePiece.x;
+            fuoco3.y=myGamePiece.y+70;
+            fuoco4.x=myGamePiece.x;
+            fuoco4.y=myGamePiece.y+70;
+            fuoco5.x=myGamePiece.x;
+            fuoco5.y=myGamePiece.y+70;
+            fuoco6.x=myGamePiece.x;
+            fuoco6.y=myGamePiece.y+70;
+        }
+        if (myGamePiece.crashWith(tubo[i])) {
+            myGamePiece.speedY +=-120;
+        }
+        tubo[i].update();
+    }
+
+    for (i = 0; i < tubo2.length; i += 1) {
+        tubo2[i].y+=-2;
+        if (tubo2[i].y < 500) {
+          tubo2[i].x+=-1;
+          tubo2[i].y+=2;
+        }
+        if (tubo2[i].x < 370) {
+            tubo2[i].y+=3;
+        }
+     
+        if (fuoco.crashWith(tubo2[i]) || fuoco2.crashWith(tubo2[i]) || fuoco3.crashWith(tubo2[i]) || fuoco4.crashWith(tubo2[i]) || fuoco5.crashWith(tubo2[i]) || fuoco5.crashWith(tubo2[i])) {
+            fuoco2.x=myGamePiece.x;
+            fuoco2.y=myGamePiece.y+70;
+            fuoco.x=myGamePiece.x;
+            fuoco.y=myGamePiece.y+70;
+            fuoco3.x=myGamePiece.x;
+            fuoco3.y=myGamePiece.y+70;
+            fuoco4.x=myGamePiece.x;
+            fuoco4.y=myGamePiece.y+70;
+            fuoco5.x=myGamePiece.x;
+            fuoco5.y=myGamePiece.y+70;
+            fuoco6.x=myGamePiece.x;
+            fuoco6.y=myGamePiece.y+70;
+        }
+        if (myGamePiece.crashWith(tubo2[i])) {
+            myGamePiece.speedY +=-120;
+        }
+        tubo2[i].update();
+    }
+    
+    if(myGameArea.frameNo>7000){
         location.href = "win.html";
     }
     
@@ -1166,14 +1703,13 @@ function updateGameArea() {
     testovita.update();
     testopunti.text="PUNTEGGIO:"+myGameArea.punti;
     testopunti.update();
-    testotime.text="TEMPO:"+myGameArea.frameNo+"=8000";
+    testotime.text="TEMPO:"+myGameArea.frameNo+"=7000";
     testotime.update();
     testopunti2.text="X:"+myGameArea.monetar;
     testopunti2.update();
     monetap.update();
     myGamePiece.newPos2();
     myGamePiece.update();
- 
     t.update();
 }
 
@@ -1198,4 +1734,3 @@ function accelerate(n) {
     if (!myGameArea.interval) {myGameArea.interval = setInterval(updateGameArea, 20);}
     myGamePiece.gravity = n;
 }
-
