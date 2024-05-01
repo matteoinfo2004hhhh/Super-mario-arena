@@ -308,127 +308,127 @@ if(myGameArea.vitaMario>50){
 }else{
     myGameArea.vitaMariof=0;
     myGameArea.vitaMariof2=0;
-    myGamePiece.image.src="img/mp5.png";
+    myGamePiece.image.src="img2/mp5.png";
     this.myGamePiece.width=100;
     this.myGamePiece.height=100;
     if (myGameArea.keys && myGameArea.keys[37]) {
         num = Math.floor((Math.random() * 2) + 1); 
         if (num == 1) {
-            myGamePiece.image.src = "img/mp7.png"; 
+            myGamePiece.image.src = "img2/mp7.png"; 
         } 
         if (num == 2) {
-            myGamePiece.image.src = "img/mp8.png"; 
+            myGamePiece.image.src = "img2/mp8.png"; 
         } 
         if (num == 3) {
-            myGamePiece.image.src = "img/mp9.png"; 
+            myGamePiece.image.src = "img2/mp9.png"; 
         }
     }
     
     if (myGameArea.keys && myGameArea.keys[39]) {
         num = Math.floor((Math.random() * 2) + 1); 
         if (num == 1) {
-            myGamePiece.image.src = "img/mp2.png"; 
+            myGamePiece.image.src = "img2/mp2.png"; 
         } 
         if (num == 2) {
-            myGamePiece.image.src = "img/mp3.png"; 
+            myGamePiece.image.src = "img2/mp3.png"; 
         } 
         if (num == 3) {
-            myGamePiece.image.src = "img/mp4.png"; 
+            myGamePiece.image.src = "img2/mp4.png"; 
         }
     
     }
     
     if (myGameArea.keys && myGameArea.keys[38]) {
-        myGamePiece.image.src = "img/mp1.png"; 
+        myGamePiece.image.src = "img2/mp1.png"; 
         suono6.play();
         if (myGameArea.keys && myGameArea.keys[37]) {
-            myGamePiece.image.src = "img/mp6.png"; 
+            myGamePiece.image.src = "img2/mp6.png"; 
         }
         if (myGameArea.keys && myGameArea.keys[39]) {
-            myGamePiece.image.src = "img/mp1.png"; 
+            myGamePiece.image.src = "img2/mp1.png"; 
         }
     }
 } 
 
 if(myGameArea.vitaMariof>0){
-    myGamePiece.image.src = "img/mf5.png"; 
+    myGamePiece.image.src = "img2/mf5.png"; 
     if (myGameArea.keys && myGameArea.keys[37]) {
         num = Math.floor((Math.random() * 2) + 1); 
 
         if (num == 1) {
-            myGamePiece.image.src = "img/mf6.png"; 
+            myGamePiece.image.src = "img2/mf6.png"; 
         } 
         if (num == 2) {
-            myGamePiece.image.src = "img/mf7.png"; 
+            myGamePiece.image.src = "img2/mf7.png"; 
         } 
         if (num == 3) {
-            myGamePiece.image.src = "img/mf8.png"; 
+            myGamePiece.image.src = "img2/mf8.png"; 
         }
     }
     
     if (myGameArea.keys && myGameArea.keys[39]) {
         num = Math.floor((Math.random() * 2) + 1); 
         if (num == 1) {
-            myGamePiece.image.src = "img/mf2.png"; 
+            myGamePiece.image.src = "img2/mf2.png"; 
         } 
         if (num == 2) {
-            myGamePiece.image.src = "img/mf3.png"; 
+            myGamePiece.image.src = "img2/mf3.png"; 
         } 
         if (num == 3) {
-            myGamePiece.image.src = "img/mf4.png"; 
+            myGamePiece.image.src = "img2/mf4.png"; 
         }
     }
     
     if (myGameArea.keys && myGameArea.keys[38]) {
-        myGamePiece.image.src = "img/mf.png"; 
+        myGamePiece.image.src = "img2/mf.png"; 
 
         if (myGameArea.keys && myGameArea.keys[37]) {
-            myGamePiece.image.src = "img/mf10.png"; 
+            myGamePiece.image.src = "img2/mf10.png"; 
         }
         if (myGameArea.keys && myGameArea.keys[39]) {
-            myGamePiece.image.src = "img/mf.png"; 
+            myGamePiece.image.src = "img2/mf.png"; 
         }
     }
 
 }
 
 if(myGameArea.vitaMariof2>0){
-    myGamePiece.image.src = "img/mpp5.png"; 
+    myGamePiece.image.src = "img2/mpp5.png"; 
     if (myGameArea.keys && myGameArea.keys[37]) {
         num = Math.floor((Math.random() * 2) + 1); 
 
         if (num == 1) {
-            myGamePiece.image.src = "img/mpp6.png"; 
+            myGamePiece.image.src = "img2/mpp6.png"; 
         } 
         if (num == 2) {
-            myGamePiece.image.src = "img/mpp7.png"; 
+            myGamePiece.image.src = "img2/mpp7.png"; 
         } 
         if (num == 3) {
-            myGamePiece.image.src = "img/mpp8.png"; 
+            myGamePiece.image.src = "img2/mpp8.png"; 
         }
     }
     
     if (myGameArea.keys && myGameArea.keys[39]) {
         num = Math.floor((Math.random() * 2) + 1); 
         if (num == 1) {
-            myGamePiece.image.src = "img/mpp2.png"; 
+            myGamePiece.image.src = "img2/mpp2.png"; 
         } 
         if (num == 2) {
-            myGamePiece.image.src = "img/mpp3.png"; 
+            myGamePiece.image.src = "img2/mpp3.png"; 
         } 
         if (num == 3) {
-            myGamePiece.image.src = "img/mpp4.png"; 
+            myGamePiece.image.src = "img2/mpp4.png"; 
         }
     }
     
     if (myGameArea.keys && myGameArea.keys[38]) {
-        myGamePiece.image.src = "img/mpp.png"; 
+        myGamePiece.image.src = "img2/mpp.png"; 
 
         if (myGameArea.keys && myGameArea.keys[37]) {
-            myGamePiece.image.src = "img/mpp10.png"; 
+            myGamePiece.image.src = "img2/mpp10.png"; 
         }
         if (myGameArea.keys && myGameArea.keys[39]) {
-            myGamePiece.image.src = "img/mpp.png"; 
+            myGamePiece.image.src = "img2/mpp.png"; 
         }
     }
 
@@ -825,13 +825,10 @@ function updateGameArea() {
          fuoco5.y=myGamePiece.y+70;
 
      }
-
      if(fuoco6.x<20){
         fuoco6.x=myGamePiece.x;
         fuoco6.y=myGamePiece.y+70;
-        
     }
-
     }else{
         fuoco6.x=myGamePiece.x+99;
         fuoco6.y=myGamePiece.y+9999;
@@ -856,15 +853,12 @@ function updateGameArea() {
                 suono7.play();
             }
         }
-
         nemici1[i].x += -9;
         nemici1[i].update();
-
       if (fuoco.crashWith(nemici1[i])) {nemici1[i].x=-10000;myGameArea.punti+=100;suono3.play();fuoco.x=myGamePiece.x;fuoco.y=myGamePiece.y+70;}
       if (fuoco2.crashWith(nemici1[i])) { nemici1[i].x=-10000; myGameArea.punti+=100;suono3.play();fuoco2.x=myGamePiece.x;fuoco2.y=myGamePiece.y+70;}
       if (fuoco3.crashWith(nemici1[i]) || fuoco4.crashWith(nemici1[i])) {nemici1[i].x=-10000; myGameArea.punti+=100;suono3.play();}
       if (fuoco5.crashWith(nemici1[i]) || fuoco6.crashWith(nemici1[i])) {nemici1[i].x=-10000;myGameArea.punti+=100;suono3.play();}
-
         if(nemici1[i].x<1){
             nemici1.splice(i, 1);
             i--; 
